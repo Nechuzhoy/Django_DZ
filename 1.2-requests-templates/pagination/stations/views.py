@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.core.paginator import Paginator
 
+
 def index(request):
     return redirect(reverse('bus_stations'))
 
@@ -17,6 +18,8 @@ with open(django.conf.settings.BUS_STATION_CSV, 'r', encoding='utf-8') as csvfil
         list_bus_stations.append({'Name': j['Name'], 'Street': j['Street'], 'District': j['District']})
 
 CONTENT = list_bus_stations
+
+
 def bus_stations(request):
     per_pag = 10
     page_num = int(request.GET.get('page', 1))
