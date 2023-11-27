@@ -8,15 +8,13 @@ from .permissions import IsAdvertisementOwner
 from .filters import AdvertisementFilter
 
 
-
-
 class AdvertisementViewSet(ModelViewSet):
     """ViewSet для объявлений."""
     queryset = Advertisement.objects.all()
     serializer_class = AdvertisementSerializer
-    permission_classes = [IsAuthenticated,]
+    permission_classes = [IsAuthenticated, ]
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_advertisement = AdvertisementFilter
+    filter_class = AdvertisementFilter
 
     # TODO: настройте ViewSet, укажите атрибуты для кверисета,
     #   сериализаторов и фильтров
