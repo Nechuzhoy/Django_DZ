@@ -14,7 +14,7 @@ class AdvertisementViewSet(ModelViewSet):
     serializer_class = AdvertisementSerializer
     permission_classes = [IsAuthenticated, ]
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = AdvertisementFilter
+    filterset_class = AdvertisementFilter
 
     # TODO: настройте ViewSet, укажите атрибуты для кверисета,
     #   сериализаторов и фильтров
